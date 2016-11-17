@@ -1,0 +1,17 @@
+{% extends 'bank.html.twig' %}
+
+{% block master_header %}
+    <h1>MDL bank details</h1>
+{% endblock %}
+
+{% block page_content %}
+    <ul class="bank-details__list">
+        <li><b>NAME:</b> {{ banks.mdl.name }}</li>
+        <li><b>COUNTRY:</b> {{ banks.mdl.country }}</li>
+        <li><b>CITY:</b> {{ banks.mdl.city }}</li>
+        <li><b>BANK:</b> {{ banks.mdl.bank }}</li>
+        <li><b>IBAN:</b> {{ banks.mdl.iban }}</li>
+        <li><b>BIC:</b> {{ banks.mdl.bic }}</li>
+        <li><b>idno:</b> {{ banks.mdl.idno }}</li>
+    </ul>
+{% endblock %}

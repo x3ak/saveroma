@@ -1,0 +1,16 @@
+{% extends 'bank.html.twig' %}
+
+{% block master_header %}
+    <h1>UAH bank details</h1>
+{% endblock %}
+
+{% block page_content %}
+    <ul class="bank-details__list">
+        <li><b>NAME:</b> {{ banks.uag.name }}</li>
+        <li><b>COUNTRY:</b> {{ banks.uag.country }}</li>
+        <li><b>CITY:</b> {{ banks.uag.city }}</li>
+        <li><b>BANK:</b> {{ banks.uag.bank }}</li>
+        <li><b>IBAN:</b> {{ banks.uag.iban }}</li>
+        <li><b>BIC:</b> {{ banks.uag.bic }}</li>
+    </ul>
+{% endblock %}

@@ -13,7 +13,6 @@ class Router {
         this._mastheadTitle = document.querySelector('.master-header h1');
         this._mastheadGraphic = document.querySelector('.master-header');
         this._pageContent = document.querySelector('.page-content');
-        this._langSwitcher = document.querySelector('.lang-switcher');
 
 
         this.addEventListeners();
@@ -96,7 +95,7 @@ class Router {
         // var newPageStyles = this._newContent.querySelector('style[id^="styles"]');
         var newTitle = this._newContent.querySelector('.master-header h1');
         var newPageContent = this._newContent.querySelector('.page-content');
-        var newLangSwitcher = this._newContent.querySelector('.lang-switcher');
+        var newPageContentHeader = this._newContent.querySelector('.page-content__header');
 
         // if (newPageStyles) {
         //     Take a copy of the page-specific styles if they don't already exist.
@@ -111,10 +110,6 @@ class Router {
 
         if (newPageContent) {
             this._pageContent.innerHTML = newPageContent.innerHTML;
-        }
-
-        if (newLangSwitcher) {
-            this._langSwitcher.innerHTML = newLangSwitcher.innerHTML;
         }
 
 

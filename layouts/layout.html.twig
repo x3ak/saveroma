@@ -8,6 +8,7 @@
     <link rel="manifest" href="{{ 'manifest.json'|add_hash }}">
     <title>Save Roma</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="/static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="{{ 'styles/main.css'|add_hash }}" rel="stylesheet">
     <script src="{{ 'scripts/main.js'|add_hash }}"></script>
 </head>
@@ -30,13 +31,19 @@
     {% endblock %}
 </div>
 
-<ul class="lang-switcher">
-    <li><a href="/ro/{{ currentPage }}">Română</a></li>
-    <li><a href="/ru/{{ currentPage }}">Русский</a></li>
-    <li><a href="/en/{{ currentPage }}">English</a></li>
-</ul>
-
 <section class="page-content">
+
+    <div class="page-content__header">
+        <ul class="lang-switcher">
+            {#<li><a href="/ro/{{ currentPage }}.html">Română</a></li>#}
+            <li><a href="/en/{{ currentPage }}.html">English</a></li>
+            <li><a href="/ru/{{ currentPage }}.html">Русский</a></li>
+        </ul>
+
+        {% block page_content_back %}
+        {% endblock %}
+    </div>
+
 
     {% block page_content %}
     {% endblock %}

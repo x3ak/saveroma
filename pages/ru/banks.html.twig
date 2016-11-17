@@ -1,11 +1,38 @@
 {% extends 'main.html.twig' %}
 
 {% block master_header %}
-    <h1>Банки</h1>
+    <h1>Список банков</h1>
 {% endblock %}
 
 {% block page_content %}
+<div id="banks-page">
     <p>
-        Инфо по банкам
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     </p>
+
+    <div class="bank-country">
+        <h2>Moldova</h2>
+        <ul>
+            <li><a href="bank-mdl.html" class="internal">MDL</a></li>
+            <li><a href="bank-eur.html" class="internal">EUR</a></li>
+            <li><a href="bank-usd.html" class="internal">USD</a></li>
+        </ul>
+    </div>
+
+    <div class="bank-country">
+        <h2>Russia</h2>
+        <ul>
+            <li><a href="bank-rub.html" class="internal">RUB</a></li>
+        </ul>
+    </div>
+
+    {#<div class="bank-country">#}
+        {#<h2>Ukraine</h2>#}
+        {#<ul>#}
+            {#<li><a href="bank-uah.html" class="internal">UAH</a></li>#}
+        {#</ul>#}
+    {#</div>#}
+</div>
 {% endblock %}
+
+

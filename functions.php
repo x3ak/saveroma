@@ -27,38 +27,33 @@ function getFundraisingData() {
 
 class Request
 {
-    public static function getRequestUri()
+    private static $data = [
+        'lang' => 'en',
+        'page' => 'about',
+    ];
+
+    public static function initialize()
     {
-        return trim(trim(str_replace('?' . $_SERVER['QUERY_STRING'], '', $_SERVER['REQUEST_URI'])), '/');
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        self::$data['page'] = pathinfo($path, PATHINFO_FILENAME) ?: 'about';
+        $language = (($dirname = pathinfo($path, PATHINFO_DIRNAME)) == '/') ? '/en' : $dirname;
+
+        self::$data['lang'] = current(explode('/', trim($language, '/')));
     }
 
+    public static function getRequestUri()
+    {
+        return parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    }
 
     public static function getLanguage()
     {
-        switch (substr(self::getRequestUri(), 0, 2)) {
-            case 'ru':
-                $lang = 'ru';
-                break;
-            case 'ro':
-                $lang = 'ro';
-                break;
-            case 'en':
-            default:
-                $lang = 'en';
-        }
-
-        return $lang;
+        return self::$data['lang'];
     }
 
     public static function getPage()
     {
-        $page = trim(preg_replace('/^' . self::getLanguage() . '/', '', self::getRequestUri()), '/');
-
-        if (empty($page)) {
-            $page = 'about.html';
-        }
-
-        return $page;
+        return self::$data['page'];
     }
 
     public static function checkETag($etag)

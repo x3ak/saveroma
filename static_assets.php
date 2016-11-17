@@ -1,20 +1,6 @@
 <?php
-$twig->addFilter(new Twig_SimpleFilter('add_hash', function ($file){
-
-    $filePath = __DIR__ . '/static/' . $file;
-
-
-    if (!file_exists($filePath)) {
-        return $file;
-    }
-
-    $hash = md5_file($filePath);
-
-    return '/static/' . preg_replace('/(.*)\.(.*)/', sprintf("$1.%s.$2", $hash), $file);
-}));
-
 $staticMatches = [];
-if (preg_match('/^static\/(.*)\.(.{32}).(.*)/', Request::getRequestUri(), $staticMatches)) {
+if (preg_match('/^\/static\/(.*)\.(.{32}).(.*)/', Request::getRequestUri(), $staticMatches)) {
 
     $assetName = $staticMatches[1] . '.' . $staticMatches[3];
 

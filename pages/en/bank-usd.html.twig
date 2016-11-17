@@ -1,0 +1,17 @@
+{% extends 'bank.html.twig' %}
+
+{% block master_header %}
+    <h1>USD bank details</h1>
+{% endblock %}
+
+{% block page_content %}
+    <ul class="bank-details__list">
+        <li><b>NAME:</b> {{ banks.usd.name }}</li>
+        <li><b>COUNTRY:</b> {{ banks.usd.country }}</li>
+        <li><b>CITY:</b> {{ banks.usd.city }}</li>
+        <li><b>BANK:</b> {{ banks.usd.bank }}</li>
+        <li><b>CORRESPONDENT BANK:</b> {{ banks.eur.correspondent_bank }}</li>
+        <li><b>IBAN:</b> {{ banks.usd.iban }}</li>
+        <li><b>BIC:</b> {{ banks.usd.bic }}</li>
+    </ul>
+{% endblock %}

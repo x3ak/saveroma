@@ -2,5 +2,8 @@
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="dbSrc:///app/3693f03d-1a6d-4a0e-b02c-372986206b53" dialect="TSQL" />
+    <file url="dbSrc:///app/535b62f3-d627-47cb-bf9c-e211b6d883fb" dialect="TSQL" />
+    <file url="dbSrc:///app/a5d564e4-9b1a-494b-a07b-eedce54d7371" dialect="TSQL" />
+    <file url="dbSrc:///app/faad209f-8801-4fec-b053-d27f98d071bc" dialect="TSQL" />
   </component>
 </project>

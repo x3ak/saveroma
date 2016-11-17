@@ -1,0 +1,20 @@
+{% extends 'bank.html.twig' %}
+
+{% block master_header %}
+    <h1>RUB bank details</h1>
+{% endblock %}
+
+{% block page_content %}
+    <ul class="bank-details__list">
+        <li><b>Номер карты:</b> {{ banks.rub.card }}</li>
+        <li><b>Гомер счета:</b> {{ banks.rub.account }}</li>
+        <li><b>BIC:</b> {{ banks.rub.bic }}</li>
+        <li><b>Получатель:</b> {{ banks.rub.receiver }}</li>
+        <li><b>Банк получателя:</b> {{ banks.rub.receiver_bank }}</li>
+        <li><b>Корреспондентский счет:</b> {{ banks.rub.correspondent_account }}</li>
+        <li><b>КПП:</b> {{ banks.rub.kpp }}</li>
+        <li><b>ИНН:</b> {{ banks.rub.inn }}</li>
+        <li><b>ОКПО:</b> {{ banks.rub.okpo }}</li>
+        <li><b>ОГРН:</b> {{ banks.rub.ogrn }}</li>
+    </ul>
+{% endblock %}

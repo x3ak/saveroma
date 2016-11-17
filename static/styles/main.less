@@ -65,10 +65,23 @@ body, html {
 }
 
 
-ul.lang-switcher {
+.page-content__header {
+  display: flex;
+
   max-width: 864px;
   width: 100%;
   margin: 0 auto;
+  flex-direction: column;
+
+  ul {
+    margin: 0;
+  }
+}
+
+.page-content__back-button {
+  will-change: opacity;
+  transition: opacity .3s cubic-bezier(0,0,.3,1) .3s;
+  opacity: 1;
 }
 
 .page-content {
@@ -84,7 +97,7 @@ ul.lang-switcher {
 
 }
 
-a {
+a.internal {
   text-decoration: none;
   color: #404040;
 }
@@ -93,6 +106,7 @@ nav ul, .lang-switcher {
   display: flex;
   justify-content: flex-end;
   padding: 0 8px;
+  white-space: nowrap;
   li {
     list-style: none;
     margin-right: 16px;
@@ -100,9 +114,12 @@ nav ul, .lang-switcher {
     &.active, &:hover {
       a {color: #304FFE;}
     }
+
+    &.active {
+      a {font-weight: 700;}
+    }
   }
 }
-
 
 .hide-areas {
   .master-header h1 {
@@ -113,6 +130,10 @@ nav ul, .lang-switcher {
   .page-content {
     opacity: 0;
     transition: opacity .3s cubic-bezier(0,0,.3,1);
+  }
+
+  .page-content__header {
+    opacity: 0;
   }
 }
 
@@ -145,4 +166,55 @@ nav ul, .lang-switcher {
   }
 }
 
+a.back-link {
+  display: flex;
+  margin-top: 16px;
+  color: #304FFE;
 
+  &:before {
+    content: '';
+    background: url(/static/images/icons/ic_arrow_back_black_24px.svg) center center no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+  }
+}
+
+.bank-country {
+  display: flex;
+  border-bottom: 1px solid silver;
+  align-items: center;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  h2 {
+    text-align: right;
+    width: 50%;
+  }
+}
+
+.bank-details__list {
+  margin: 16px 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin-bottom: 8px;
+    b {
+      text-transform: uppercase;
+    }
+  }
+}
+
+i.fa-facebook-official {
+  color: #3b5998;
+}
+
+i.fa-vk {
+  color: #507299;
+}
+
+i.fa-youtube-play {
+  color: #e62117;
+}

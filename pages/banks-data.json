@@ -1,0 +1,50 @@
+{
+  "mdl" : {
+    "iban": "MD14MO2259ASV47186687100",
+    "bic": "MOBBMD22",
+    "name": "Comaritchii, Roman",
+    "country": "Republica Moldova",
+    "city": "Chisinau",
+    "bank": "BC \"MOBIASBANCA - Groupe Societe Generale\" S.A., Moldova, Chisinau, str. Stefan cel Mare, 81A",
+    "idno": "0980405890474"
+  },
+
+  "eur" : {
+    "iban": "MD33MO2225ASV08727997100",
+    "bic": "SOGEFRPPXXX",
+    "name": "Comaritchii, Roman",
+    "country": "Republica Moldova",
+    "city": "Chisinau",
+    "bank": "BC \"MOBIASBANCA - Groupe Societe Generale\" S.A., Moldova, Chisinau, str. Stefan cel Mare, 81A",
+    "correspondent_bank": "Societe Generale, Paris, France"
+  },
+  "usd" : {
+    "iban": "MD76MO2225ASV08728107100",
+    "bic": "IRVTUS3NXXX",
+    "name": "Comaritchii, Roman",
+    "country": "Republica Moldova",
+    "city": "Chisinau",
+    "bank": "BC \"MOBIASBANCA - Groupe Societe Generale\" S.A., Moldova, Chisinau, str. Stefan cel Mare, 81A",
+    "correspondent_bank": "Societe Generale, New York, USA"
+  },
+  "uah" : {
+    "iban": "MD14MO2259ASV47186687100",
+    "bic": "MOBBMD22",
+    "name": "Comaritchii, Roman",
+    "country": "Republica Moldova",
+    "city": "Chisinau",
+    "bank": "BC \"MOBIASBANCA - Groupe Societe Generale\" S.A., Moldova, Chisinau, str. Stefan cel Mare, 81A"
+  },
+  "rub" : {
+    "card": "4276 8280 1364 9655",
+    "account": "40817810328160390614",
+    "bic": "048702640",
+    "receiver": "Ольга Анатольевна Комарицкая",
+    "receiver_bank": "КОМИ, ОТДЕЛЕНИЕ N8617, ПАО СБЕРБАНК Г.СЫКТЫВКАР",
+    "correspondent_account": "30101810400000000640",
+    "kpp": "110102001",
+    "inn": "7707083893",
+    "okpo": "09138409",
+    "ogrn": "1027700132195"
+  }
+}
