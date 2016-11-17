@@ -60,7 +60,7 @@ class Request
     {
         header('Content-Type: text/html; charset=utf-8');
         header("Etag: $etag");
-        header("Cache-Control: no-cache");
+        header("Cache-Control: public, max-age=120");
 
         if (trim($_SERVER['HTTP_IF_NONE_MATCH']) == $etag) {
             header("HTTP/1.1 304 Not Modified");

@@ -79,7 +79,8 @@ html {
   margin: 0 auto;
   padding: 8px;
 }
-a.internal {
+a.internal,
+.lang-switcher a {
   text-decoration: none;
   color: #404040;
 }
@@ -207,15 +208,34 @@ a.back-link:before {
 }
 .bank-country {
   display: flex;
-  border-bottom: 1px solid silver;
-  align-items: center;
+  flex-direction: column;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 .bank-country:last-child {
   border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 .bank-country h2 {
-  text-align: right;
-  width: 50%;
+  margin: 0;
+}
+.bank-country ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.bank-country ul li {
+  list-style: none;
+  margin-left: 16px;
+}
+.bank-country ul li:last-child {
+  margin-bottom: 0;
+}
+.bank-country ul li a {
+  text-decoration: underline;
+  font-size: 1.5em;
+  white-space: nowrap;
 }
 .bank-details__list {
   margin: 16px 0;
