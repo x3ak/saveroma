@@ -1,0 +1,177 @@
+html {
+  height: 100%;
+}
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  color: #444;
+  background: #FAFAFA;
+  line-height: 1.5;
+}
+* {
+  box-sizing: border-box;
+}
+.header {
+  background: url(/static/images/header/header.svg) top center;
+  background-size: 100% 100%;
+  height: 72px;
+  position: relative;
+  z-index: 100;
+}
+.header .content {
+  width: 100%;
+  max-width: 848px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.master-header {
+  position: relative;
+  z-index: 50;
+  height: 88px;
+  background: #3F51B5;
+  margin-top: -32px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.4);
+  margin-bottom: 8px;
+}
+.master-header h1 {
+  will-change: transform, opacity;
+  transition: transform 0.34s cubic-bezier(0, 0, 0.3, 1), opacity 0.34s cubic-bezier(0, 0, 0.3, 1);
+  color: white;
+  font-weight: 100;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 8px;
+  width: 100%;
+  white-space: nowrap;
+  padding: 0 8px;
+  max-width: 864px;
+  outline: 0;
+  margin: 0;
+}
+ul.lang-switcher {
+  max-width: 864px;
+  width: 100%;
+  margin: 0 auto;
+}
+.page-content {
+  will-change: opacity;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0.3s;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  max-width: 848px;
+  margin: 0 auto;
+  padding: 8px;
+}
+a {
+  text-decoration: none;
+  color: #404040;
+}
+nav ul,
+.lang-switcher {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 8px;
+}
+nav ul li,
+.lang-switcher li {
+  list-style: none;
+  margin-right: 16px;
+}
+nav ul li.active a,
+.lang-switcher li.active a,
+nav ul li:hover a,
+.lang-switcher li:hover a {
+  color: #304FFE;
+}
+.hide-areas .master-header h1 {
+  opacity: 0;
+  transform: translateX(-50%) translateX(16px);
+}
+.hide-areas .page-content {
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1);
+}
+.fundraiser-progress {
+  position: relative;
+  height: 32px;
+  background-color: #E8EAF6;
+  color: white;
+  overflow: hidden;
+}
+.fundraiser-progress .fundraiser-bar {
+  position: absolute;
+  background-color: #536DFE ;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  padding: 4px;
+  text-align: right;
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--5 {
+  transform: translateX(-95%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--10 {
+  transform: translateX(-90%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--15 {
+  transform: translateX(-85%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--20 {
+  transform: translateX(-80%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--25 {
+  transform: translateX(-75%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--30 {
+  transform: translateX(-70%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--35 {
+  transform: translateX(-65%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--40 {
+  transform: translateX(-60%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--45 {
+  transform: translateX(-55%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--50 {
+  transform: translateX(-50%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--55 {
+  transform: translateX(-45%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--60 {
+  transform: translateX(-40%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--65 {
+  transform: translateX(-35%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--70 {
+  transform: translateX(-30%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--75 {
+  transform: translateX(-25%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--80 {
+  transform: translateX(-20%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--85 {
+  transform: translateX(-15%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--90 {
+  transform: translateX(-10%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--95 {
+  transform: translateX(-5%);
+}
+.fundraiser-progress .fundraiser-bar.fundraiser-bar--100 {
+  transform: translateX(0%);
+}

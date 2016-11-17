@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0">
+    <meta name="theme-color" content="#6387F5">
+    <link rel="icon" href="/static/images/icons/heart@256.png">
+    <link rel="manifest" href="{{ 'manifest.json'|add_hash }}">
+    <title>Save Roma</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="{{ 'styles/main.css'|add_hash }}" rel="stylesheet">
+    <script src="{{ 'scripts/main.js'|add_hash }}"></script>
+</head>
+<body>
+<header class="header">
+    <div class="content">
+        <div class="menu">
+            <nav>
+                <ul>
+                    {% block nav_links %}
+                    {% endblock %}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="master-header">
+    {% block master_header %}
+    {% endblock %}
+</div>
+
+<ul class="lang-switcher">
+    <li><a href="/ro/{{ currentPage }}">Română</a></li>
+    <li><a href="/ru/{{ currentPage }}">Русский</a></li>
+    <li><a href="/en/{{ currentPage }}">English</a></li>
+</ul>
+
+<section class="page-content">
+
+    {% block page_content %}
+    {% endblock %}
+</section>
+
+
+
+</body>
+</html>

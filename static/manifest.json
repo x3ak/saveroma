@@ -1,0 +1,21 @@
+{
+  "name": "Save Roman",
+  "short_name": "Save Roma",
+  "icons": [
+    {
+      "src": "/static/images/icons/heart@256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/images/icons/heart@512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAFA",
+  "theme_color": "#6387F5"
+}
