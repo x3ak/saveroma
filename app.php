@@ -1,6 +1,9 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/functions.php';
+
+$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+
 require_once __DIR__ . '/initialize_twig.php';
 
 // add support for static assets, it will intercept requests too!
