@@ -97,6 +97,7 @@ class Router {
         var newPageContent = this._newContent.querySelector('.page-content');
         var newPageContentHeader = this._newContent.querySelector('.page-content__header');
 
+
         // if (newPageStyles) {
         //     Take a copy of the page-specific styles if they don't already exist.
             // if (!document.querySelector('#' + newPageStyles.id)) {

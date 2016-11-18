@@ -17,8 +17,8 @@ try {
         $parameters = getFundraisingData();
     }
 
-    if ($page == 'bank') {
-
+    if ($page == 'social') {
+        $twig->addGlobal('page_color', 'color-pink');
     }
 
     $content = $twig->render($page . '.html.twig', $parameters);

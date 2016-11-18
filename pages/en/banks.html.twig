@@ -1,17 +1,19 @@
 {% extends 'main.html.twig' %}
 
 {% block master_header %}
-    <h1>Banks list</h1>
+    <h1>Bank account details</h1>
 {% endblock %}
 
 {% block page_content %}
 <div id="banks-page">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    </p>
 
     <div class="bank-country">
         <h2>Moldova</h2>
+        <p>
+            If you are located in Moldova or outside of Moldova one of the options to transfer your
+            donation is to make domestic or international bank transfer or personally visit one of the
+            Mobiasbank branches in Moldova.
+        </p>
         <ul>
             <li><a href="bank-mdl.html" class="internal">MDL</a></li>
             <li><a href="bank-eur.html" class="internal"><i class="fa fa-eur"></i> EUR</a></li>
@@ -21,6 +23,10 @@
 
     <div class="bank-country">
         <h2>Russia</h2>
+        <p>
+            If you are located in Russia, you can perform RUB transfer to Sberbank account opened by
+            Roman’s mother.
+        </p>
         <ul>
             <li><a href="bank-rub.html" class="internal"><i class="fa fa-rub"></i> RUB</a></li>
         </ul>

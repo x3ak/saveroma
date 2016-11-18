@@ -42,6 +42,9 @@ body, html {
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.4);
   margin-bottom: 8px;
 
+  will-change: background;
+  transition: background .34s cubic-bezier(0,0,.3,1);
+
   h1 {
     will-change: transform, opacity;
     transition: transform .34s cubic-bezier(0,0,.3,1), opacity .34s cubic-bezier(0,0,.3,1);
@@ -63,7 +66,6 @@ body, html {
     margin: 0;
   }
 }
-
 
 .page-content__header {
   display: flex;
@@ -100,6 +102,9 @@ body, html {
 a.internal, .lang-switcher a {
   text-decoration: none;
   color: #404040;
+  will-change: color;
+  transition: color .34s cubic-bezier(0,0,.3,1);
+
 }
 
 nav ul, .lang-switcher {
@@ -242,4 +247,15 @@ i.fa-vk {
 
 i.fa-youtube-play {
   color: #e62117;
+}
+
+
+body.color-pink {
+  .master-header {
+    background-color: #E91E63;
+  }
+
+  a.back-link {
+    color: #F50057;
+  }
 }
