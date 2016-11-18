@@ -97,6 +97,17 @@ class Router {
         var newPageContent = this._newContent.querySelector('.page-content');
         var newPageContentHeader = this._newContent.querySelector('.page-content__header');
 
+        for (var i = 0; i < document.body.classList.length; i++) {
+            if (document.body.classList[i] == 'hide-areas') continue;
+
+            if (!this._newContent.body.classList.contains(document.body.classList[i])) {
+                document.body.classList.remove(document.body.classList[i]);
+            }
+        }
+
+        for (var i = 0; i < this._newContent.body.classList.length; i++) {
+            document.body.classList.add(this._newContent.body.classList[i])
+        }
 
         // if (newPageStyles) {
         //     Take a copy of the page-specific styles if they don't already exist.
@@ -196,6 +207,13 @@ class Router {
             return;
         }
         this._location = window.location.pathname;
+
+        if (typeof window.ga === 'function') {
+            ga('set', 'page', window.location.pathname);
+            ga('send', 'pageview');
+        }
+
+        document.querySelector('#menu__toggle').checked = false;
 
         Promise.all([
             this._hideAreas(),

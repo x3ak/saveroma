@@ -15,12 +15,16 @@ html {
 * {
   box-sizing: border-box;
 }
+h2,
+h3 {
+  font-weight: 500;
+}
 .header {
   background: url(/static/images/header/header.svg) top center;
   background-size: 100% 100%;
-  height: 72px;
   position: relative;
   z-index: 100;
+  min-height: 72px;
 }
 .header .content {
   width: 100%;
@@ -28,6 +32,9 @@ html {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+.header .content nav {
+  background-color: white;
 }
 .master-header {
   position: relative;
@@ -74,8 +81,6 @@ html {
 .page-content {
   will-change: opacity;
   transition: opacity 0.3s cubic-bezier(0, 0, 0.3, 1) 0.3s;
-  position: relative;
-  z-index: 100;
   width: 100%;
   max-width: 848px;
   margin: 0 auto;
@@ -105,10 +110,7 @@ nav ul li.active a,
 nav ul li:hover a,
 .lang-switcher li:hover a {
   color: #304FFE;
-}
-nav ul li.active a,
-.lang-switcher li.active a {
-  font-weight: 700;
+  display: block;
 }
 .hide-areas .master-header h1 {
   opacity: 0;
@@ -121,94 +123,16 @@ nav ul li.active a,
 .hide-areas .page-content__header {
   opacity: 0;
 }
-.fundraiser-progress {
-  position: relative;
-  height: 32px;
-  background-color: #E8EAF6;
-  color: white;
-  overflow: hidden;
-}
-.fundraiser-progress .fundraiser-bar {
-  position: absolute;
-  background-color: #536DFE ;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  width: 100%;
-  padding: 4px;
-  text-align: right;
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--5 {
-  transform: translateX(-95%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--10 {
-  transform: translateX(-90%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--15 {
-  transform: translateX(-85%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--20 {
-  transform: translateX(-80%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--25 {
-  transform: translateX(-75%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--30 {
-  transform: translateX(-70%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--35 {
-  transform: translateX(-65%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--40 {
-  transform: translateX(-60%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--45 {
-  transform: translateX(-55%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--50 {
-  transform: translateX(-50%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--55 {
-  transform: translateX(-45%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--60 {
-  transform: translateX(-40%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--65 {
-  transform: translateX(-35%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--70 {
-  transform: translateX(-30%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--75 {
-  transform: translateX(-25%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--80 {
-  transform: translateX(-20%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--85 {
-  transform: translateX(-15%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--90 {
-  transform: translateX(-10%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--95 {
-  transform: translateX(-5%);
-}
-.fundraiser-progress .fundraiser-bar.fundraiser-bar--100 {
-  transform: translateX(0%);
-}
 a.back-link {
   display: flex;
   margin-top: 16px;
   color: #304FFE;
 }
-a.back-link:before {
-  content: '';
-  background: url(/static/images/icons/ic_arrow_back_black_24px.svg) center center no-repeat;
+a.back-link svg {
   width: 24px;
   height: 24px;
   margin-right: 8px;
+  fill: #304FFE;
 }
 .bank-country {
   display: flex;
@@ -231,15 +155,21 @@ a.back-link:before {
 }
 .bank-country ul li {
   list-style: none;
-  margin-left: 16px;
+  flex-grow: 1;
+  margin-right: 8px;
 }
 .bank-country ul li:last-child {
-  margin-bottom: 0;
+  margin-right: 0;
 }
 .bank-country ul li a {
-  text-decoration: underline;
+  display: block;
   font-size: 1.5em;
   white-space: nowrap;
+  font-weight: 300;
+  color: white;
+  padding: 8px;
+  background-color: #7986CB;
+  text-align: center;
 }
 .bank-details__list {
   margin: 16px 0;
@@ -252,18 +182,241 @@ a.back-link:before {
 .bank-details__list li b {
   text-transform: uppercase;
 }
-i.fa-facebook-official {
-  color: #3b5998;
+.social-links {
+  display: flex;
 }
-i.fa-vk {
-  color: #507299;
+.social-links a {
+  margin-right: 16px;
+  padding: 16px;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: 300;
 }
-i.fa-youtube-play {
-  color: #e62117;
+.social-links a:last-child {
+  margin: 0;
 }
-body.color-pink .master-header {
-  background-color: #E91E63;
+.social-links .social-link__facebook {
+  background-color: #3b5998;
 }
-body.color-pink a.back-link {
-  color: #F50057;
+.social-links .social-link__vk {
+  background-color: #507299;
+}
+.social-links .social-link__youtube {
+  background-color: #e62117;
+}
+body.color-social nav ul .active a {
+  color: #EF6C00;
+}
+body.color-social .master-header {
+  background-color: #EF6C00;
+}
+body.color-social a.back-link {
+  color: #EF6C00;
+}
+body.color-social a.back-link svg {
+  fill: #EF6C00;
+}
+body.color-fundraising nav ul .active a {
+  color: #FA6950;
+}
+body.color-fundraising .master-header {
+  background-color: #FA6950;
+}
+body.color-fundraising a.back-link {
+  color: #FA6950;
+}
+body.color-fundraising a.back-link svg {
+  fill: #FA6950;
+}
+body.color-paypal nav ul .active a {
+  color: #009cde;
+}
+body.color-paypal .master-header {
+  background-color: #003087;
+}
+body.color-paypal a.back-link {
+  color: #009cde;
+}
+body.color-paypal a.back-link svg {
+  fill: #009cde;
+}
+.fundraiser-campaign-progress {
+  display: flex;
+  font-weight: 300;
+  font-size: 1.5em;
+}
+.fundraiser-campaign-progress .fundraiser-progress {
+  background-color: rgba(0, 0, 0, 0.15);
+  color: white;
+  overflow: hidden;
+  flex-grow: 1;
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar {
+  background-color: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  height: 100%;
+  text-align: right;
+  padding: 8px;
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--5 {
+  transform: translateX(-95%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--10 {
+  transform: translateX(-90%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--15 {
+  transform: translateX(-85%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--20 {
+  transform: translateX(-80%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--25 {
+  transform: translateX(-75%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--30 {
+  transform: translateX(-70%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--35 {
+  transform: translateX(-65%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--40 {
+  transform: translateX(-60%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--45 {
+  transform: translateX(-55%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--50 {
+  transform: translateX(-50%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--55 {
+  transform: translateX(-45%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--60 {
+  transform: translateX(-40%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--65 {
+  transform: translateX(-35%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--70 {
+  transform: translateX(-30%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--75 {
+  transform: translateX(-25%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--80 {
+  transform: translateX(-20%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--85 {
+  transform: translateX(-15%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--90 {
+  transform: translateX(-10%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--95 {
+  transform: translateX(-5%);
+}
+.fundraiser-campaign-progress .fundraiser-progress .fundraiser-bar.fundraiser-bar--100 {
+  transform: translateX(0%);
+}
+.fundraiser-campaign-progress .generosity__donate-button {
+  text-transform: uppercase;
+  padding: 8px;
+  display: inline-block;
+  background-color: #FA6950;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  margin-left: 8px;
+}
+.fundraiser-campaign-progress .generosity__donate-button:hover {
+  background-color: #FF583B;
+}
+.menu__toggle {
+  display: none;
+  opacity: 0;
+  z-index: 1;
+}
+.menu__toggle-label {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  z-index: 2;
+}
+.menu__underlay {
+  background-color: #333;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.31, 1);
+}
+@media screen and (max-device-width: 425px) {
+  .bank-country ul {
+    flex-direction: column;
+  }
+  .bank-country ul li {
+    margin: 0 0 8px 0;
+  }
+  .bank-country ul li:last-child {
+    margin-bottom: 0;
+  }
+  .fundraiser-campaign-progress {
+    flex-direction: column;
+  }
+  .fundraiser-campaign-progress .generosity__donate-button {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  .social-links {
+    flex-direction: column;
+  }
+  .social-links a {
+    margin: 0 0 8px 0;
+    padding: 8px;
+  }
+  .social-links a:last-child {
+    margin-bottom: 0;
+  }
+  .header .content .menu__toggle,
+  .header .content .menu__toggle-label {
+    display: block;
+  }
+  .header .content nav {
+    display: block;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0, 0, 0.3, 1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 90%;
+  }
+  .header .content nav ul {
+    flex-direction: column;
+  }
+  .header .content nav ul li {
+    font-size: 1.4em;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+}
+.header .content .menu__toggle:checked ~ .menu__underlay {
+  opacity: .7;
+  pointer-events: auto;
+}
+.header .content .menu__toggle:checked ~ nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 90%;
+  transform: translateX(0%);
 }

@@ -17,19 +17,26 @@ body, html {
   box-sizing: border-box;
 }
 
+h2, h3 {
+  font-weight: 500;
+}
+
 .header {
   background: url(/static/images/header/header.svg) top center;
   background-size: 100% 100%;
-  height: 72px;
   position: relative;
   z-index: 100;
-
+  min-height: 72px;
   .content {
     width: 100%;
     max-width: 848px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+
+    nav {
+      background-color: white;
+    }
   }
 }
 
@@ -90,8 +97,6 @@ body, html {
   will-change: opacity;
   transition: opacity .3s cubic-bezier(0,0,.3,1) .3s;
 
-  position: relative;
-  z-index: 100;
   width: 100%;
   max-width: 848px;
   margin: 0 auto;
@@ -118,11 +123,7 @@ nav ul, .lang-switcher {
     margin-right: 16px;
 
     &.active, &:hover {
-      a {color: #304FFE;}
-    }
-
-    &.active {
-      a {font-weight: 700;}
+      a {color: #304FFE; display: block}
     }
   }
 }
@@ -143,46 +144,18 @@ nav ul, .lang-switcher {
   }
 }
 
-.fundraiser-progress {
-  position: relative;
-  height: 32px;
-  background-color: #E8EAF6;
-  color: white;
-  overflow: hidden;
-
-  .fundraiser-bar {
-    position: absolute;
-    background-color: #536DFE ;
-
-    left: 0;
-    bottom: 0;
-    top: 0;
-    width: 100%;
-    padding: 4px;
-    text-align: right;
-
-    .loop(@counter) when (@counter > 0) {
-      .loop((@counter - 5));    // next iteration
-      &.fundraiser-bar--@{counter} {
-        transform: translateX(-1% * (100% - @counter)); //width: (10px * @counter); // code for each iteration
-      }
-    }
-
-    .loop(100)
-  }
-}
 
 a.back-link {
   display: flex;
   margin-top: 16px;
   color: #304FFE;
 
-  &:before {
-    content: '';
-    background: url(/static/images/icons/ic_arrow_back_black_24px.svg) center center no-repeat;
+  svg {
+    //background: url(/static/images/icons/ic_arrow_back_black_24px.svg) center center no-repeat;
     width: 24px;
     height: 24px;
     margin-right: 8px;
+    fill: #304FFE;
   }
 }
 
@@ -209,21 +182,27 @@ a.back-link {
 
     li {
       list-style: none;
-      margin-left: 16px;
-      //margin-bottom: 8px;
+      flex-grow: 1;
+      margin-right: 8px;
 
       &:last-child {
-        margin-bottom: 0;
+        margin-right: 0;
       }
 
       a {
-        text-decoration: underline;
+        display: block;
         font-size: 1.5em;
         white-space: nowrap;
+        font-weight: 300;
+        color: white;
+        padding: 8px;
+        background-color: #7986CB;
+        text-align: center;
       }
     }
   }
 }
+
 
 .bank-details__list {
   margin: 16px 0;
@@ -237,25 +216,239 @@ a.back-link {
   }
 }
 
-i.fa-facebook-official {
-  color: #3b5998;
-}
+.social-links {
+  display: flex;
 
-i.fa-vk {
-  color: #507299;
-}
+  a {
+    margin-right: 16px;
+    padding: 16px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: 300;
 
-i.fa-youtube-play {
-  color: #e62117;
-}
-
-
-body.color-pink {
-  .master-header {
-    background-color: #E91E63;
+    &:last-child {
+      margin: 0;
+    }
   }
 
-  a.back-link {
-    color: #F50057;
+  .social-link__facebook {
+    background-color: #3b5998;
+  }
+
+  .social-link__vk {
+    background-color: #507299;
+  }
+
+  .social-link__youtube {
+    background-color: #e62117;
   }
 }
+
+body {
+  &.color-social {
+    @main: #EF6C00;
+
+    nav ul .active a {color: @main;}
+
+    .master-header {background-color: @main;}
+
+    a.back-link {
+      color: @main;
+
+      svg {fill: @main;}
+    }
+  }
+
+  &.color-fundraising {
+    @main: #FA6950;
+
+    nav ul .active a {color: @main;}
+
+    .master-header {background-color: @main;}
+
+    a.back-link {
+      color: @main;
+
+      svg {fill: @main;}
+    }
+  }
+
+  &.color-paypal {
+    nav ul .active a {color: #009cde;}
+
+    .master-header {background-color: #003087;}
+
+    a.back-link {
+      color: #009cde;
+
+      svg {fill: #009cde;}
+    }
+  }
+}
+
+
+.fundraiser-campaign-progress {
+  display: flex;
+
+  font-weight: 300;
+  font-size: 1.5em;
+
+
+  .fundraiser-progress {
+    background-color: rgba(0, 0, 0, 0.15);
+    color: white;
+    overflow: hidden;
+    flex-grow: 1;
+
+    .fundraiser-bar {
+      background-color: rgba(0, 0, 0, 0.45);
+
+      width: 100%;
+      height: 100%;
+
+      text-align: right;
+      padding: 8px;
+
+      .loop(@counter) when (@counter > 0) {
+        .loop((@counter - 5));    // next iteration
+        &.fundraiser-bar--@{counter} {
+          transform: translateX(-1% * (100% - @counter)); //width: (10px * @counter); // code for each iteration
+        }
+      }
+
+      .loop(100)
+    }
+  }
+
+  .generosity__donate-button {
+    text-transform: uppercase;
+    padding: 8px;
+    display: inline-block;
+    background-color: #FA6950;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 8px;
+
+    &:hover {
+      background-color: #FF583B;
+    }
+  }
+
+}
+
+
+
+.menu__toggle {
+  display: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.menu__toggle-label {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 8px;
+  z-index: 2;
+}
+
+.menu__underlay {
+  background-color: #333;
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s cubic-bezier(0,0,.31,1);
+}
+
+@media screen and (max-device-width: 425px) {
+  .bank-country {
+    ul {
+      flex-direction: column;
+
+      li {
+        margin: 0 0 8px 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+
+  .fundraiser-campaign-progress {
+    flex-direction: column;
+    .generosity__donate-button {
+      margin-left: 0;
+      margin-top: 8px;
+    }
+  }
+
+  .social-links {
+    flex-direction: column;
+    a {
+      margin: 0 0 8px 0;
+      padding: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .header .content {
+    .menu__toggle, .menu__toggle-label {
+      display: block;
+    }
+
+    nav {
+      display: block;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(0,0,.3,1);
+
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 90%;
+
+      ul {
+        flex-direction: column;
+
+        li {
+          font-size: 1.4em;
+          font-weight: 300;
+          margin-bottom: 16px;
+        }
+      }
+    }
+  }
+}
+
+.header .content {
+  .menu__toggle:checked {
+    &~.menu__underlay {
+      opacity: .7;
+      pointer-events: auto;
+    }
+
+    &~nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 90%;
+      transform: translateX(0%);
+    }
+  }
+}
+
