@@ -28,7 +28,7 @@ function getFundraisingData() {
 class Request
 {
     private static $data = [
-        'lang' => 'en',
+        'lang' => 'ru',
         'page' => 'about',
     ];
 
@@ -36,7 +36,7 @@ class Request
     {
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         self::$data['page'] = pathinfo($path, PATHINFO_FILENAME) ?: 'about';
-        $language = (($dirname = pathinfo($path, PATHINFO_DIRNAME)) == '/') ? '/en' : $dirname;
+        $language = (($dirname = pathinfo($path, PATHINFO_DIRNAME)) == '/') ? '/ru' : $dirname;
 
         self::$data['lang'] = current(explode('/', trim($language, '/')));
     }

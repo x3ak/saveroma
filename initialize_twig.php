@@ -5,7 +5,7 @@ $twig = new Twig_Environment(new Twig_Loader_Filesystem([
     __DIR__ . '/layouts',
     __DIR__ . '/layouts/'. $lang,
     __DIR__ . '/pages/'. $lang,
-    __DIR__ . '/pages/all',
+//    __DIR__ . '/pages/all',
 ]), [
 //    'cache' => __DIR__ . '/cache/twig/' . $lang,
 ]);

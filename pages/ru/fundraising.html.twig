@@ -1,0 +1,56 @@
+{% extends 'main.html.twig' %}
+
+{% block master_header %}
+    <h1>Generosity</h1>
+{% endblock %}
+
+{% block page_content %}
+    {% set mainLink = 'https://www.generosity.com/projects/help-roman-and-his-family-to-beat-cancer' %}
+    <p>
+        Один из простых способов перевести деньги на лечение Роману, если у вас есть e-mail address и банковская карточка
+        любого банка, это использовать сайт <a href="{{ mainLink }}" target="_blank">Generosity</a>,
+        где <a href="{{ mainLink }}" target="_blank">мы создали свою кампанию по сбору средств</a>.
+    </p>
+    <p>
+        Это надежная платформа, где ваши данные защищены; при желании переводы могут быть анонимными.
+
+    </p>
+    <p>
+        Вот, что необходимо сделать для перевода денег с карты:
+
+    </p>
+    <ul>
+        <li>зайти на страницу кампании на сайте,</li>
+        <li>указать количество денег, которые вы хотите пожертвовать (будьте внимательны, Generosity предлагает вам пожертвовать и на их деятельность, однако вы можете указать  $0),</li>
+        <li>ввести данные вашей банковской карты.</li>
+    </ul>
+
+    <p>Команда сайта осуществляет переводы накопленных сумм на наш банковский счет каждые 3 недели.</p>
+
+    <div class="fundraiser-campaign-info">
+        <h3>Прогресс нашей компании</h3>
+        <p>
+            Собранно {{ fundraiser.balance }} благодаря {{ fundraiser.cached_collected_pledges_count }} людям
+        </p>
+
+        <div class="fundraiser-campaign-progress">
+            <div class="fundraiser-progress">
+                <div class="fundraiser-bar fundraiser-bar--{{ fundraiser.nearest_five_percent }}">
+                    {{ fundraiser.percent_complete }}
+                </div>
+            </div>
+
+            <a href="https://www.generosity.com/projects/help-roman-and-his-family-to-beat-cancer/contributions/new" target="_blank" class="generosity__donate-button">
+                DONATE NOW
+            </a>
+        </div>
+
+    </div>
+
+    <img src="/static/photos/generosity.jpg" width="100%" vspace="8"/>
+
+
+
+{% endblock %}
+
+

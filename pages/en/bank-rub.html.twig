@@ -1,13 +1,13 @@
 {% extends 'bank.html.twig' %}
 
 {% block master_header %}
-    <h1><i class="fa fa-rub"></i> RUB</h1>
+    <h1>RUB account</h1>
 {% endblock %}
 
 {% block page_content %}
     <ul class="bank-details__list">
         <li><b>Номер карты:</b> {{ banks.rub.card }}</li>
-        <li><b>Гомер счета:</b> {{ banks.rub.account }}</li>
+        <li><b>Номер счета:</b> {{ banks.rub.account }}</li>
         <li><b>BIC:</b> {{ banks.rub.bic }}</li>
         <li><b>Получатель:</b> {{ banks.rub.receiver }}</li>
         <li><b>Банк получателя:</b> {{ banks.rub.receiver_bank }}</li>
