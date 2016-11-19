@@ -27,8 +27,8 @@ try {
     echo $content;
 
 } catch (\Twig_Error_Loader $e) {
-    var_dump($e);
-//    header("HTTP/1.0 404 Not Found");
-//    exit;
+//    var_dump($e);
+    header("HTTP/1.0 404 Not Found");
+    exit;
 }
 

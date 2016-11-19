@@ -134,6 +134,13 @@ nav ul, .lang-switcher {
 
 nav ul li {
   margin-right: 16px;
+
+  &.active, &:hover {
+    a.social {color: #C51162;}
+    a.fundraising {color: #FA6950;}
+    a.paypal {color: #009cde;}
+  }
+
 }
 
 .lang-switcher li {
@@ -264,6 +271,8 @@ a.back-link {
   cursor: pointer;
   transition: width .3s cubic-bezier(0,0,.31,1);
   -webkit-transition: width .3s cubic-bezier(0,0,.31,1);
+  margin-left: 16px;
+  float: right;
 }
 
 #zoom-image__checkbox {
@@ -279,9 +288,7 @@ a.back-link {
 
 body {
   &.color-social {
-    @main: #EF6C00;
-
-    nav ul .active a {color: @main;}
+    @main: #F06292;
 
     .master-header {background-color: @main;}
 
@@ -295,8 +302,6 @@ body {
   &.color-fundraising {
     @main: #FA6950;
 
-    nav ul .active a {color: @main;}
-
     .master-header {background-color: @main;}
 
     a.back-link {
@@ -306,13 +311,11 @@ body {
     }
 
     .page-content {
-      p a { color : @main }
+      a.campaign-link { color : @main }
     }
   }
 
   &.color-paypal {
-    nav ul .active a {color: #009cde;}
-
     .master-header {background-color: #003087;}
 
     a.back-link {
@@ -480,6 +483,7 @@ body {
   .zoom-image {
     width: 100%;
     float: none;
+    margin: 16px 0;
   }
 }
 

@@ -1,0 +1,57 @@
+{% extends 'main.html.twig' %}
+
+{% block master_header %}
+    <h1>Generosity</h1>
+{% endblock %}
+
+{% block page_content %}
+    {% set mainLink = 'https://www.generosity.com/projects/help-roman-and-his-family-to-beat-cancer' %}
+    <p>
+        Una dintre cele mai simple metode de a transfera banii pentru tratamentul lui Roman,
+        dacă aveți o adresă de e-mail și un card bancar a oarecării bănci, este să utilizați platforma
+        <a href="{{ mainLink }}" class="campaign-link" target="_blank">Generosity</a>,
+        unde <a href="{{ mainLink }}" class="campaign-link" target="_blank">noi am creat campania pentru adunarea banilor</a>.
+    </p>
+    <p>
+        Este o platformă fiabilă, unde datele Dvs. sunt protejate; transferurile pot fi anonime, dacă doriți.
+    </p>
+    <p>
+        Iată ce trebuie să faceți pentru a transfera banii de pe card:
+    </p>
+
+    <ul>
+        <li>vizitați <a href="{{ mainLink }}" class="campaign-link" target="_blank">pagina campaniei</a> de pe site,</li>
+        <li>specificați suma de bani pe care doriți s-o donați (fiți atenți, Generosity
+            vă oferă să donați pentru activitatea lor, dar puteți specifica $0),</li>
+        <li>introduceți datele cardului dvs. de credit.</li>
+    </ul>
+
+    <p>Echipa site-lui oferă tranzacții de sume acumulate pe contul nostru bancar fiecare 3 săptămâni.</p>
+
+    <div class="fundraiser-campaign-info">
+        <h3>Progresul nostru</h3>
+        <p>
+            Adunați {{ fundraiser.balance }} datorită {{ fundraiser.cached_collected_pledges_count }} de persoane
+        </p>
+
+        <div class="fundraiser-campaign-progress">
+            <div class="fundraiser-progress">
+                <div class="fundraiser-bar fundraiser-bar--{{ fundraiser.nearest_five_percent }}">
+                    {{ fundraiser.percent_complete }}
+                </div>
+            </div>
+
+            <a href="https://www.generosity.com/projects/help-roman-and-his-family-to-beat-cancer/contributions/new" target="_blank" class="generosity__donate-button">
+                DONATE NOW
+            </a>
+        </div>
+
+    </div>
+
+    <img src="/static/photos/generosity.jpg" width="100%" vspace="8"/>
+
+
+
+{% endblock %}
+
+

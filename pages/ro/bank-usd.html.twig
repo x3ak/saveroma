@@ -1,0 +1,17 @@
+{% extends 'bank.html.twig' %}
+
+{% block master_header %}
+    <h1>Cont USD</h1>
+{% endblock %}
+
+{% block page_content %}
+    <ul class="bank-details__list">
+        <li><b>Beneficiar:</b> {{ banks.usd.name }}</li>
+        <li><b>Țară:</b> {{ banks.usd.country }}</li>
+        <li><b>Oraș:</b> {{ banks.usd.city }}</li>
+        <li><b>Banca:</b> {{ banks.usd.bank }}</li>
+        <li><b>Bancă corespondentă:</b> {{ banks.eur.correspondent_bank }}</li>
+        <li><b>IBAN:</b> {{ banks.usd.iban }}</li>
+        <li><b>BIC:</b> {{ banks.usd.bic }}</li>
+    </ul>
+{% endblock %}

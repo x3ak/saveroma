@@ -1,0 +1,11 @@
+{% extends 'layout.html.twig' %}
+
+{% set pageTitle = 'Îl salvăm pe Roma' %}
+
+{% block nav_links %}
+    <li><a href="/{{ lang }}/about.html" class="internal about">Despre noi</a></li>
+    <li><a href="/{{ lang }}/social.html" class="internal social">Reţele sociale</a></li>
+    <li><a href="/{{ lang }}/banks.html" class="internal banks">Bănci</a></li>
+    <li><a href="/{{ lang }}/fundraising.html" class="internal fundraising">Generosity</a></li>
+    <li><a href="/{{ lang }}/paypal.html" class="internal paypal">PayPal</a></li>
+{% endblock %}

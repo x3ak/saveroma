@@ -119,6 +119,18 @@ nav ul li:hover a,
 nav ul li {
   margin-right: 16px;
 }
+nav ul li.active a.social,
+nav ul li:hover a.social {
+  color: #C51162;
+}
+nav ul li.active a.fundraising,
+nav ul li:hover a.fundraising {
+  color: #FA6950;
+}
+nav ul li.active a.paypal,
+nav ul li:hover a.paypal {
+  color: #009cde;
+}
 .lang-switcher li {
   margin-left: 16px;
 }
@@ -222,6 +234,8 @@ a.back-link svg {
   cursor: pointer;
   transition: width 0.3s cubic-bezier(0, 0, 0.31, 1);
   -webkit-transition: width 0.3s cubic-bezier(0, 0, 0.31, 1);
+  margin-left: 16px;
+  float: right;
 }
 #zoom-image__checkbox {
   position: absolute;
@@ -231,20 +245,14 @@ a.back-link svg {
 #zoom-image__checkbox:checked ~ label img {
   width: 100%;
 }
-body.color-social nav ul .active a {
-  color: #EF6C00;
-}
 body.color-social .master-header {
-  background-color: #EF6C00;
+  background-color: #F06292;
 }
 body.color-social a.back-link {
-  color: #EF6C00;
+  color: #F06292;
 }
 body.color-social a.back-link svg {
-  fill: #EF6C00;
-}
-body.color-fundraising nav ul .active a {
-  color: #FA6950;
+  fill: #F06292;
 }
 body.color-fundraising .master-header {
   background-color: #FA6950;
@@ -255,11 +263,8 @@ body.color-fundraising a.back-link {
 body.color-fundraising a.back-link svg {
   fill: #FA6950;
 }
-body.color-fundraising .page-content p a {
+body.color-fundraising .page-content a.campaign-link {
   color: #FA6950;
-}
-body.color-paypal nav ul .active a {
-  color: #009cde;
 }
 body.color-paypal .master-header {
   background-color: #003087;
@@ -463,6 +468,7 @@ body.color-paypal a.back-link svg {
   .zoom-image {
     width: 100%;
     float: none;
+    margin: 16px 0;
   }
 }
 .header .content .menu__toggle:checked ~ .menu__underlay {

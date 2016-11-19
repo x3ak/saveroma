@@ -1,0 +1,28 @@
+{% extends 'main.html.twig' %}
+
+{% block master_header %}
+    <h1>PayPal & WebMoney</h1>
+{% endblock %}
+
+{% block page_content %}
+    <p>
+        Mai avem două metode rapide și de încredere pentru a dona -  PayPal și WebMoney.
+    </p>
+    <h2>PayPal</h2>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="hosted_button_id" value="J2TRL3LJRGR7Y">
+        <input type="hidden" name="lc" value="ru_RU">
+        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+
+    <h2>WebMoney</h2>
+    <p>
+        <b>Счета:</b> Z993169239121, E543806775444, R991859667627
+    </p>
+
+{% endblock %}
+
+
