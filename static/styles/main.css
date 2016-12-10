@@ -398,6 +398,12 @@ body.color-paypal a.back-link svg {
   right: 8px;
   z-index: 2;
 }
+.menu__toggle-label span {
+  font-size: 1.4em;
+  margin-right: 10px;
+  transition: opacity 0.34s cubic-bezier(0, 0, 0.3, 1);
+  opacity: 1;
+}
 .menu__underlay {
   background-color: #333;
   position: fixed;
@@ -440,7 +446,7 @@ body.color-paypal a.back-link svg {
   }
   .header .content .menu__toggle,
   .header .content .menu__toggle-label {
-    display: block;
+    display: flex;
   }
   .header .content nav {
     display: block;
@@ -474,6 +480,9 @@ body.color-paypal a.back-link svg {
 .header .content .menu__toggle:checked ~ .menu__underlay {
   opacity: .7;
   pointer-events: auto;
+}
+.header .content .menu__toggle:checked ~ label span {
+  opacity: 0;
 }
 .header .content .menu__toggle:checked ~ nav {
   display: block;

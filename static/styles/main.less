@@ -392,6 +392,13 @@ body {
   top: 12px;
   right: 8px;
   z-index: 2;
+
+  span {
+    font-size: 1.4em;
+    margin-right: 10px;
+    transition: opacity .34s cubic-bezier(0,0,.3,1);
+    opacity: 1;
+  }
 }
 
 .menu__underlay {
@@ -446,7 +453,7 @@ body {
 
   .header .content {
     .menu__toggle, .menu__toggle-label {
-      display: block;
+      display: flex;
     }
 
     nav {
@@ -492,6 +499,10 @@ body {
     &~.menu__underlay {
       opacity: .7;
       pointer-events: auto;
+    }
+
+    &~label span {
+      opacity: 0;
     }
 
     &~nav {

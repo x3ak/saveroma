@@ -1,9 +1,10 @@
 function Router() {
 
     this._onClick = function (evt) {
+
+        // make sure we do not intercept ctrl clicks on links
         if (evt.metaKey || evt.ctrlKey || evt.button !== 0) {
             return;
-
         }
 
         var node = evt.target;
@@ -18,10 +19,6 @@ function Router() {
             evt.preventDefault();
             this.go(node.href);
         }
-
-        // if (node && node.classList.contains('zoom-image')) {
-        //     node.classList.toggle('zoom-image--zoomed');
-        // }
     };
 
     this.go = function (url) {
@@ -73,9 +70,6 @@ function Router() {
 
     this._swapContents  = function () {
 
-
-
-        // var newPageStyles = this._newContent.querySelector('style[id^="styles"]');
         var newTitle = this._newContent.querySelector('.master-header h1');
         var newPageContent = this._newContent.querySelector('.page-content');
         var newPageContentHeader = this._newContent.querySelector('.page-content__header');
@@ -113,8 +107,6 @@ function Router() {
 
     this._onSwapComplete  = function () {
         this._isSwapping = false;
-        // LiveSessionInfo.toggle();
-        // LiveBanner.toggle();
     };
 
     this._updateNavLinks  = function () {
@@ -152,11 +144,12 @@ function Router() {
             ga('send', 'pageview');
         }
 
+        // Hide navigation pane
         document.querySelector('#menu__toggle').checked = false;
 
         Promise.all([
             this._hideAreas(),
-            this._loadNewPath(),
+            this._loadNewPath()
         ])
         .then(function () {
             if (this._isSwapping) {
